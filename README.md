@@ -1,4 +1,4 @@
-# アニメ series finder ⛩
+# アニメ finder ⛩
 
 A search engine for anime series `duh`
 
