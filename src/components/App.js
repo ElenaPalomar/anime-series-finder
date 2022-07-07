@@ -1,18 +1,16 @@
 // Components
-import MainLanding from './landing/mainLanding';
+import HeaderLanding from './header/HeaderLanding';
+import MainLanding from './landing/MainLanding';
+import Footer from './footer/Footer';
 // Styles
 import '../styles/App.scss';
 // Routes
 import { Route, Routes } from 'react-router-dom';
-import HeaderLanding from './header/headerLanding';
-
 
 function App() {
   return (
-    <div className="App">
-
+    <div className='App'>
       <Routes>
-
         <Route
           path='/'
           element={
@@ -42,11 +40,9 @@ function App() {
             </h2>
           }
         />
-
       </Routes>
 
-      {/* Aquí iría el componente de Footer */}
-
+      <Footer />
     </div>
   );
 }
