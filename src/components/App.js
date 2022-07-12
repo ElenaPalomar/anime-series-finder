@@ -2,12 +2,35 @@
 import HeaderLanding from './header/HeaderLanding';
 import MainLanding from './landing/MainLanding';
 import Footer from './footer/Footer';
+// Services
+import YearApi from '../services/api/yearApi';
 // Styles
 import '../styles/App.scss';
+// Hooks
+import { useState, useEffect } from 'react';
 // Routes
 import { Route, Routes } from 'react-router-dom';
+import getYearApi from '../services/api/yearApi';
 
 function App() {
+  // WIP
+  const [dataYears, setDataYears] = useState([]);
+
+  useEffect(() => {
+    getYearApi().then((dataYears) => {
+      console.log(dataYears);
+      setDataYears(dataYears);
+    });
+  }, []);
+
+  console.log(dataYears);
+
+  const yearFilter = dataYears.filter((user) => {
+    return user.ano === 2012;
+  });
+  console.log(yearFilter);
+  // WIP
+
   return (
     <div className='App'>
       <Routes>
