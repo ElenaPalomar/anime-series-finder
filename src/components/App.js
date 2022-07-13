@@ -13,7 +13,14 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   // CONSTANTS
+  // Input search (browse) value
   const [search, setSearch] = useState("");
+
+  // FUNCTIONS
+  // Handle function to collect the values of the input:text and update the state 'search'
+  const handleSearch = (browse) => {
+    setSearch(browse);
+  };
 
   return (
     <div className='App'>
@@ -32,7 +39,10 @@ function App() {
           path='/browse'
           element={
             <>
-              <MainBrowser searchValueApp={search} />
+              <MainBrowser
+                searchValueApp={search}
+                handleSearchApp={handleSearch}
+              />
             </>
           }
         />
