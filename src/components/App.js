@@ -1,35 +1,19 @@
 // Components
-import HeaderLanding from './header/HeaderLanding';
-import MainLanding from './landing/MainLanding';
-import Footer from './footer/Footer';
+import HeaderLanding from "./header/HeaderLanding";
+import MainLanding from "./landing/MainLanding";
+import Footer from "./footer/Footer";
+import MainBrowser from "./browse/MainBrowser";
 // Services
-import YearApi from '../services/api/yearApi';
 // Styles
-import '../styles/App.scss';
+import "../styles/App.scss";
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 // Routes
-import { Route, Routes } from 'react-router-dom';
-import getYearApi from '../services/api/yearApi';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  // WIP
-  const [dataYears, setDataYears] = useState([]);
-
-  useEffect(() => {
-    getYearApi().then((dataYears) => {
-      console.log(dataYears);
-      setDataYears(dataYears);
-    });
-  }, []);
-
-  console.log(dataYears);
-
-  const yearFilter = dataYears.filter((user) => {
-    return user.ano === 2012;
-  });
-  console.log(yearFilter);
-  // WIP
+  // CONSTANTS
+  const [search, setSearch] = useState("");
 
   return (
     <div className='App'>
@@ -45,21 +29,20 @@ function App() {
         />
 
         <Route
-          path='/finder'
+          path='/browse'
           element={
-            <h2>
-              Este título solo aparece cuando la usuaria entra en la página de
-              finder
-            </h2>
+            <>
+              <MainBrowser searchValueApp={search} />
+            </>
           }
         />
 
         <Route
-          path='/aboutUs'
+          path='/about'
           element={
             <h2>
               Este título solo aparece cuando la usuaria entra en la página de
-              about us
+              about
             </h2>
           }
         />
