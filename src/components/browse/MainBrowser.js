@@ -1,6 +1,7 @@
 import Browser from "./Browser";
 
 const MainBrowser = (props) => {
+  // FUNTIONS
   const handleSubmit = (event) => event.preventDefault();
 
   return (
