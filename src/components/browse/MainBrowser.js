@@ -1,11 +1,17 @@
 import Browser from "./Browser";
 
 const MainBrowser = (props) => {
+  // FUNTIONS
+  const handleSubmit = (event) => event.preventDefault();
+
   return (
     <>
       <main>
-        <form action=''>
-          <Browser searchValueMainBrowser={props.searchValueApp} />
+        <form action='' onSubmit={handleSubmit}>
+          <Browser
+            searchValueMainBrowser={props.searchValueApp}
+            handleSearchMainBrowser={props.handleSearchApp}
+          />
         </form>
       </main>
     </>

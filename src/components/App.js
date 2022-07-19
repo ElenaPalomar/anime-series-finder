@@ -7,13 +7,21 @@ import MainBrowser from "./browse/MainBrowser";
 // Styles
 import "../styles/App.scss";
 // Hooks
-import { useState, useEffect } from "react";
+import { useState } from "react";
+// import { useState, useEffect } from "react";
 // Routes
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   // CONSTANTS
+  // Input search (browsedTerm) value
   const [search, setSearch] = useState("");
+
+  // FUNCTIONS
+  // Handle function to collect the values of the input:text and update the state 'search'
+  const handleSearch = (browsedTerm) => {
+    setSearch(browsedTerm);
+  };
 
   return (
     <div className='App'>
@@ -32,7 +40,10 @@ function App() {
           path='/browse'
           element={
             <>
-              <MainBrowser searchValueApp={search} />
+              <MainBrowser
+                searchValueApp={search}
+                handleSearchApp={handleSearch}
+              />
             </>
           }
         />
