@@ -1,21 +1,29 @@
 // Components
-import HeaderLanding from "./header/HeaderLanding";
-import MainLanding from "./landing/MainLanding";
-import Footer from "./footer/Footer";
-import MainBrowser from "./browse/MainBrowser";
+import HeaderLanding from './header/HeaderLanding';
+import MainLanding from './landing/MainLanding';
+import Footer from './footer/Footer';
+import MainBrowser from './browse/MainBrowser';
 // Services
+import getTitleApi from '../services/api/titleApi';
 // Styles
-import "../styles/App.scss";
+import '../styles/App.scss';
 // Hooks
-import { useState } from "react";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 // Routes
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   // CONSTANTS
   // Input search (browsedTerm) value
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
+
+  const [animeData, setAnimeData] = useState([]);
+
+  useEffect(() => {
+    getTitleApi().then((animeData) => {
+      setAnimeData(animeData);
+    });
+  }, []);
 
   // FUNCTIONS
   // Handle function to collect the values of the input:text and update the state 'search'
