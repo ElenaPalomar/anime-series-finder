@@ -1,7 +1,7 @@
 import Browser from "./Browser";
 
 const MainBrowser = (props) => {
-  // FUNTIONS
+  // FUNCTIONS
   const handleSubmit = (event) => event.preventDefault();
 
   return (
@@ -9,8 +9,8 @@ const MainBrowser = (props) => {
       <main>
         <form action='' onSubmit={handleSubmit}>
           <Browser
-            searchValueMainBrowser={props.searchValueApp}
-            handleSearchMainBrowser={props.handleSearchApp}
+            searchValue={props.searchValue}
+            handleSearch={props.handleSearch}
           />
         </form>
       </main>

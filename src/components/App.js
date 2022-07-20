@@ -40,10 +40,7 @@ function App() {
           path='/browse'
           element={
             <>
-              <MainBrowser
-                searchValueApp={search}
-                handleSearchApp={handleSearch}
-              />
+              <MainBrowser searchValue={search} handleSearch={handleSearch} />
             </>
           }
         />

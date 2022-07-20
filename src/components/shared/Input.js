@@ -1,5 +1,5 @@
 const Input = (props) => {
-  // FUNTIONS
+  // FUNCTIONS
   const handleInput = (event) => props.handleChangeInput(event.target.value);
 
   return (
@@ -10,7 +10,7 @@ const Input = (props) => {
         name={props.name}
         id={props.id}
         placeholder={props.placeholder}
-        value={props.searchValueInput}
+        value={props.inputValue}
         onChange={handleInput}
       />
     </>

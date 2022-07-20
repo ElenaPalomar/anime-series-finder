@@ -11,8 +11,8 @@ const Browser = (props) => {
         name='browse'
         id='browse'
         placeholder='Kimi no na wa'
-        searchValueInput={props.searchValueMainBrowser}
-        handleChangeInput={props.handleSearchMainBrowser}
+        inputValue={props.searchValue}
+        handleChangeInput={props.handleSearch}
       />
     </>
   );
