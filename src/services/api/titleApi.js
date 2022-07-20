@@ -1,5 +1,5 @@
 const getTitleApi = () => {
-  return fetch('https://api.jikan.moe/v4/anime?q=kimetsu%20no%20yaiba')
+  return fetch(`https://api.jikan.moe/v4/anime?q=kimetsu`)
     .then((response) => response.json())
     .then((data) => {
       const animeData = data.data.map((anime) => ({
@@ -45,7 +45,6 @@ const getTitleApi = () => {
         },
         genres: [...anime.genres, ...anime.themes, ...anime.demographics],
       }));
-      console.log('fetch', animeData);
       return animeData;
     });
 };

@@ -1,4 +1,5 @@
-import Browser from "./Browser";
+import Browser from './Browser';
+import Button from '../shared/Button';
 
 const MainBrowser = (props) => {
   // FUNCTIONS
@@ -12,6 +13,7 @@ const MainBrowser = (props) => {
             searchValue={props.searchValue}
             handleSearch={props.handleSearch}
           />
+          <Button handleClickButton={props.handleClickSearch} />
         </form>
       </main>
     </>

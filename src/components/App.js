@@ -15,10 +15,13 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   // CONSTANTS
   // Input search (browsedTerm) value
-  const [search, setSearch] = useState('');
-
+  const [searchValue, setSearchValue] = useState('');
+  // Fetched input text data (browsedTerm) on click of "search" button
+  const [searchFetch, setSearchFetch] = useState(searchValue);
+  // Fetched animes from input text
   const [animeData, setAnimeData] = useState([]);
 
+  // USEEFFECTS
   useEffect(() => {
     getTitleApi().then((animeData) => {
       setAnimeData(animeData);
@@ -28,7 +31,12 @@ function App() {
   // FUNCTIONS
   // Handle function to collect the values of the input:text and update the state 'search'
   const handleSearch = (browsedTerm) => {
-    setSearch(browsedTerm);
+    setSearchValue(browsedTerm);
+  };
+
+  //
+  const handleClickSearch = () => {
+    setSearchFetch(searchValue);
   };
 
   return (
@@ -48,7 +56,11 @@ function App() {
           path='/browse'
           element={
             <>
-              <MainBrowser searchValue={search} handleSearch={handleSearch} />
+              <MainBrowser
+                searchValue={searchValue}
+                handleSearch={handleSearch}
+                handleClickSearch={handleClickSearch}
+              />
             </>
           }
         />
