@@ -1,5 +1,5 @@
-const getTitleApi = () => {
-  return fetch(`https://api.jikan.moe/v4/anime?q=kimetsu`)
+const getTitleApi = (searchFetch) => {
+  return fetch(`https://api.jikan.moe/v4/anime?q=${searchFetch}`)
     .then((response) => response.json())
     .then((data) => {
       const animeData = data.data.map((anime) => ({
