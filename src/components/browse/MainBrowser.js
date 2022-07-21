@@ -1,6 +1,6 @@
 import Browser from "./Browser";
 import Button from "../shared/Button";
-import Title from "../shared/title";
+import Title from "../shared/Title";
 
 const MainBrowser = (props) => {
   // FUNCTIONS
