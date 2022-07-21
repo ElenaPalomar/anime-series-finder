@@ -63,6 +63,8 @@ function App() {
                 searchValue={searchValue}
                 handleSearch={handleSearch}
                 handleClickSearch={handleClickSearch}
+                animeData={animeData}
+                searchFetch={searchFetch}
               />
             </>
           }

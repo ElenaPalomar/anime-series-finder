@@ -1,6 +1,7 @@
 import Browser from "./Browser";
 import Button from "../shared/Button";
 import Title from "../shared/Title";
+import AnimeList from "./list/AnimeList";
 
 const MainBrowser = (props) => {
   // FUNCTIONS
@@ -17,6 +18,10 @@ const MainBrowser = (props) => {
       </form>
       <section className='section__list'>
         <Title />
+        <AnimeList
+          animeData={props.animeData}
+          searchFetch={props.searchFetch}
+        />
       </section>
     </main>
   );
