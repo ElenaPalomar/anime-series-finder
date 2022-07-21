@@ -1,5 +1,5 @@
-import Browser from './Browser';
-import Button from '../shared/Button';
+import Browser from "./Browser";
+import Button from "../shared/Button";
 
 const MainBrowser = (props) => {
   // FUNCTIONS

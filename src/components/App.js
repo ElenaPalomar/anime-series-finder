@@ -1,32 +1,35 @@
 // Components
-import HeaderLanding from './header/HeaderLanding';
-import MainLanding from './landing/MainLanding';
-import Footer from './footer/Footer';
-import MainBrowser from './browse/MainBrowser';
+import HeaderLanding from "./header/HeaderLanding";
+import MainLanding from "./landing/MainLanding";
+import Footer from "./footer/Footer";
+import MainBrowser from "./browse/MainBrowser";
 // Services
-import getTitleApi from '../services/api/titleApi';
+import getTitleApi from "../services/api/titleApi";
 // Styles
-import '../styles/App.scss';
+import "../styles/App.scss";
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 // Routes
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   // CONSTANTS
   // Input search (browsedTerm) value
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   // Fetched input text data (browsedTerm) on click of "search" button
-  const [searchFetch, setSearchFetch] = useState(searchValue);
+  const [searchFetch, setSearchFetch] = useState("");
   // Fetched animes from input text
   const [animeData, setAnimeData] = useState([]);
 
   // USEEFFECTS
   useEffect(() => {
-    getTitleApi().then((animeData) => {
-      setAnimeData(animeData);
-    });
-  }, []);
+    if (searchFetch !== "") {
+      getTitleApi(searchFetch).then((animeData) => {
+        setAnimeData(animeData);
+      });
+    }
+  }, [searchFetch]);
+  console.log(animeData);
 
   // FUNCTIONS
   // Handle function to collect the values of the input:text and update the state 'search'
@@ -34,7 +37,7 @@ function App() {
     setSearchValue(browsedTerm);
   };
 
-  //
+  // Handle function to update the searchFetch value with searchValue when clicking the search button
   const handleClickSearch = () => {
     setSearchFetch(searchValue);
   };
