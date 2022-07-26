@@ -2,6 +2,7 @@ import Browser from "./Browser";
 import Button from "../shared/Button";
 import Title from "../shared/Title";
 import AnimeList from "./list/AnimeList";
+import PreviewList from "./list/PreviewList";
 
 const MainBrowser = (props) => {
   // FUNCTIONS
@@ -17,7 +18,11 @@ const MainBrowser = (props) => {
         <Button handleClickButton={props.handleClickSearch} />
       </form>
       <section className='section__list'>
-        <Title />
+        <Title class='uppercase' title={props.listTitle} />
+        <PreviewList
+          handleClickTop={props.handleClickTop}
+          handleClickLatest={props.handleClickLatest}
+        />
         <AnimeList
           animeData={props.animeData}
           searchFetch={props.searchFetch}

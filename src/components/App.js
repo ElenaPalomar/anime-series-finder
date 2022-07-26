@@ -18,8 +18,10 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   // Fetched input text data (browsedTerm) on click of "search" button
   const [searchFetch, setSearchFetch] = useState("");
-  // Fetched animes from input text
+  // Fetched anime from input text
   const [animeData, setAnimeData] = useState([]);
+  // Variable que guarda el texto que se va a mostrar en el título de las lista, ya sea el nombre buscado en el input text, last anime o top anime, y se cambia al pulsar cada botón
+  const [listTitle, setListTitle] = useState("Top anime");
 
   // USEEFFECTS
   useEffect(() => {
@@ -37,9 +39,20 @@ function App() {
     setSearchValue(browsedTerm);
   };
 
-  // Handle function to update the searchFetch value with searchValue when clicking the search button
+  // Handle function to update the searchFetch value and listTitle value with searchValue when clicking the search button
   const handleClickSearch = () => {
     setSearchFetch(searchValue);
+    setListTitle(searchValue);
+  };
+
+  // Handle function to update the listTitle value with 'Top anime' when clicking the top button
+  const handleClickTop = () => {
+    setListTitle("Top anime");
+  };
+
+  // Handle function to update the listTitle value with 'Latest anime' when clicking the latest button
+  const handleClickLatest = () => {
+    setListTitle("Latest anime");
   };
 
   return (
@@ -65,6 +78,9 @@ function App() {
                 handleClickSearch={handleClickSearch}
                 animeData={animeData}
                 searchFetch={searchFetch}
+                handleClickTop={handleClickTop}
+                handleClickLatest={handleClickLatest}
+                listTitle={listTitle}
               />
             </>
           }

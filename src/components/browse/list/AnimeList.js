@@ -3,7 +3,7 @@ import AnimeCard from "./AnimeCard";
 const AnimeList = (props) => {
   console.log(props.animeData);
   // FUNCTIONS
-  // Function to render the animes' list
+  // Function to render the anime's list
   const renderAnimeList = props.animeData.map((anime) => (
     <li className='anime' key={anime.id}>
       {/* Pass each object of the state of API array to the AnimeItem component with the props 'anime' */}
