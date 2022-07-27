@@ -38,6 +38,7 @@ function App() {
       });
     }
   }, [searchFetch]);
+  console.log("animeData", animeData);
 
   // Fetched anime data from 'top' button
   useEffect(() => {
@@ -103,6 +104,8 @@ function App() {
                 handleClickTop={handleClickTop}
                 handleClickLatest={handleClickLatest}
                 listTitle={listTitle}
+                top={top}
+                latest={latest}
               />
             </>
           }
