@@ -1,7 +1,6 @@
 import AnimeCard from "./AnimeCard";
 
 const AnimeList = (props) => {
-  console.log(props.animeData);
   // FUNCTIONS
   // Function to render the anime's list
   const renderAnimeList = props.animeData.map((anime) => (

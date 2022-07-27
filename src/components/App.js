@@ -5,6 +5,8 @@ import Footer from "./footer/Footer";
 import MainBrowser from "./browse/MainBrowser";
 // Services
 import getTitleApi from "../services/api/titleApi";
+import getTopApi from "../services/api/topApi";
+import getLatestApi from "../services/api/latestApi";
 // Styles
 import "../styles/App.scss";
 // Hooks
@@ -22,8 +24,13 @@ function App() {
   const [animeData, setAnimeData] = useState([]);
   // Variable que guarda el texto que se va a mostrar en el título de las lista, ya sea el nombre buscado en el input text, last anime o top anime, y se cambia al pulsar cada botón
   const [listTitle, setListTitle] = useState("Top anime");
+  // Fetched anime from top
+  const [top, setTop] = useState([]);
+  // Fetched anime from latest
+  const [latest, setLatest] = useState([]);
 
   // USEEFFECTS
+  // Fetched anime data from users' search (input)
   useEffect(() => {
     if (searchFetch !== "") {
       getTitleApi(searchFetch).then((animeData) => {
@@ -31,7 +38,22 @@ function App() {
       });
     }
   }, [searchFetch]);
-  console.log(animeData);
+
+  // Fetched anime data from 'top' button
+  useEffect(() => {
+    getTopApi().then((topData) => {
+      setTop(topData);
+    });
+  }, []);
+  console.log("top", top);
+
+  // Fetched anime data from 'latest' button
+  useEffect(() => {
+    getLatestApi().then((latestData) => {
+      setLatest(latestData);
+    });
+  }, []);
+  console.log("latest", latest);
 
   // FUNCTIONS
   // Handle function to collect the values of the input:text and update the state 'search'
