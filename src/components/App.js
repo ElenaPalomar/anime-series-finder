@@ -3,6 +3,7 @@ import HeaderLanding from './header/HeaderLanding';
 import MainLanding from './landing/MainLanding';
 import Footer from './footer/Footer';
 import MainBrowser from './browse/MainBrowser';
+import About from './about/About';
 // Services
 import getTitleApi from '../services/api/titleApi';
 import getTopApi from '../services/api/topApi';
@@ -111,15 +112,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/about"
-          element={
-            <h2>
-              Este título solo aparece cuando la usuaria entra en la página de
-              about
-            </h2>
-          }
-        />
+        <Route path="/about" element={<About />} />
       </Routes>
 
       <Footer />

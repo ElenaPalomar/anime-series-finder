@@ -1,0 +1,26 @@
+@import 'core/reset';
+@import 'core/variables';
+@import 'core/global';
+
+@import 'shared/button';
+@import 'shared/input';
+@import 'shared/label';
+@import 'shared/title';
+
+@import 'layout/header/headerLanding';
+@import 'layout/header/header';
+@import 'layout/footer/footer';
+
+@import 'layout/landing/mainLanding';
+
+@import 'layout/browse/browser';
+@import 'layout/browse/mainBrowser';
+@import 'layout/browse/list/animeList';
+@import 'layout/browse/list/previewList';
+@import 'layout/browse/list/animeCard';
+
+// @import 'layout/favorites/';
+// @import 'layout/pending/';
+// @import 'layout/watched/';
+
+@import 'core/lastOnes';

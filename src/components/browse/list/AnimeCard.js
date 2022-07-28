@@ -1,4 +1,6 @@
+// Components
 import Button from '../../shared/Button';
+// Routes
 import { Link } from 'react-router-dom';
 
 const addFavorite = () => {
