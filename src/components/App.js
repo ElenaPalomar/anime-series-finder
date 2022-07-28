@@ -22,7 +22,7 @@ function App() {
   const [searchFetch, setSearchFetch] = useState('');
   // Fetched anime from input text
   const [animeData, setAnimeData] = useState([]);
-  // Save the text shown in the list h1 (either from the input, Last anime or Top anime). Changes on click of each btn
+  // Text shown in the list h1 (either from the input, Last anime or Top anime). Changes on click of each btn
   const [listTitle, setListTitle] = useState('Top anime');
   // Fetched anime from top
   const [top, setTop] = useState([]);
@@ -79,10 +79,10 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <>
               <HeaderLanding />
@@ -92,7 +92,7 @@ function App() {
         />
 
         <Route
-          path='/browse'
+          path="/browse"
           element={
             <>
               <MainBrowser
@@ -112,7 +112,7 @@ function App() {
         />
 
         <Route
-          path='/about'
+          path="/about"
           element={
             <h2>
               Este título solo aparece cuando la usuaria entra en la página de

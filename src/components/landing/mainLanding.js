@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const MainLanding = () => {
   return (
@@ -9,7 +9,7 @@ const MainLanding = () => {
         Looking for anime info? Wanna fav the best of them? Make a watchlist?
       </p>
 
-      <Link to='/browse' title='Click here!'>
+      <Link to="/browse" title="Click here!">
         Click me!
       </Link>
     </main>
