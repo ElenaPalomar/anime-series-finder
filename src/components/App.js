@@ -1,9 +1,11 @@
 // Components
 import HeaderLanding from './header/HeaderLanding';
 import MainLanding from './landing/MainLanding';
-import Footer from './footer/Footer';
+import Header from './header/Header';
 import MainBrowser from './browse/MainBrowser';
 import About from './about/About';
+import Footer from './footer/Footer';
+
 // Services
 import getTitleApi from '../services/api/titleApi';
 import getTopApi from '../services/api/topApi';
@@ -96,6 +98,7 @@ function App() {
           path="/browse"
           element={
             <>
+              <Header />
               <MainBrowser
                 searchValue={searchValue}
                 handleSearch={handleSearch}
@@ -112,7 +115,48 @@ function App() {
           }
         />
 
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/favorites"
+          element={
+            <>
+              <Header />
+              {/* <Favorites /> */}
+              <p>Here are the ones you've loved</p>
+            </>
+          }
+        />
+
+        <Route
+          path="/watched"
+          element={
+            <>
+              <Header />
+              {/* <Watched /> */}
+              <p>Remember that ONE you loved? Back to the past!</p>
+            </>
+          }
+        />
+
+        <Route
+          path="/pending"
+          element={
+            <>
+              <Header />
+              {/* <Pending /> */}
+              <p>Haven't you checked out Shingeki no Kyojin? It's a must!</p>
+            </>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <>
+              <Header />
+              <About />
+            </>
+          }
+        />
       </Routes>
 
       <Footer />
