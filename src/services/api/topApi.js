@@ -4,7 +4,7 @@ const getTopApi = () => {
     .then((data) => {
       const topData = data.data.map((anime) => ({
         id: anime.mal_id,
-        poster: anime.images.jpg.large_image_url,
+        poster: anime.images.jpg.image_url,
         trailer: anime.trailer.url,
         titles: {
           title: anime.title,
